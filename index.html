@@ -926,187 +926,6 @@
             .contact-title { font-size: 40px; }
             .contact-buttons { flex-direction: column; align-items: center; }
         }
-        /* --- CONTEXTUAL SECTION DECORATIONS --- */
-        .section-deco {
-            position: absolute;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .section-deco img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 20px;
-            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.08));
-        }
-        .section-deco--circle img {
-            border-radius: 50%;
-            border: 3px solid rgba(255,255,255,0.8);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            background: #fff;
-            padding: 8px;
-        }
-        .section-deco--float {
-            animation: decoFloat 10s ease-in-out infinite;
-        }
-        .section-deco--float-alt {
-            animation: decoFloat 12s ease-in-out infinite reverse;
-        }
-        @keyframes decoFloat {
-            0%, 100% { transform: translateY(0) rotate(-2deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
-        }
-
-        /* Ensure sections that contain deco have position relative */
-        .hero, .section, .testimonials, .contact {
-            position: relative;
-            overflow: hidden;
-        }
-
-        @media (max-width: 1100px) {
-            .section-deco { display: none; }
-        }
-
-        /* --- PRODUCT SHOWCASE --- */
-        .product-showcase {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 20px;
-          max-width: 1100px;
-          margin: 48px auto;
-          padding: 0 20px;
-        }
-        .product-showcase__item {
-          height: 200px;
-          border-radius: 20px;
-          overflow: hidden;
-          border: 1px solid var(--border);
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          background: var(--bg-white);
-        }
-        .product-showcase__item:hover {
-          transform: translateY(-8px) scale(1.03);
-          border-color: var(--border-accent);
-          box-shadow: var(--shadow-hover);
-        }
-        .product-showcase__item img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          padding: 16px;
-          transition: transform 0.6s ease;
-        }
-        .product-showcase__item:hover img {
-          transform: scale(1.08);
-        }
-        .product-showcase__label {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          padding: 10px 16px;
-          background: linear-gradient(transparent, rgba(0,0,0,0.5));
-          color: #fff;
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-        }
-        @media (max-width: 768px) {
-          .product-showcase { grid-template-columns: repeat(2, 1fr); }
-          .product-showcase__item { height: 160px; }
-        }
-
-        /* --- SECTION DIVIDER --- */
-        .section-divider {
-          position: relative;
-          height: 120px;
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 32px;
-          padding: 0 80px;
-        }
-        .section-divider__image {
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          border: 2px solid var(--border);
-          opacity: 0.5;
-          transition: all 0.4s ease;
-          flex-shrink: 0;
-          background: #fff;
-        }
-        .section-divider__image:hover {
-          opacity: 0.9;
-          transform: scale(1.1);
-          border-color: var(--border-accent);
-        }
-        .section-divider__image img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          padding: 8px;
-        }
-        .section-divider__line {
-          flex: 1;
-          height: 1px;
-          background: var(--border);
-          max-width: 180px;
-        }
-        @media (max-width: 768px) {
-          .section-divider { height: 80px; padding: 0 24px; gap: 16px; }
-          .section-divider__image { width: 48px; height: 48px; }
-        }
-
-        /* --- BRAND BADGE --- */
-        .brand-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          padding: 6px 16px;
-          background: var(--bg-card);
-          border: 1px solid var(--border);
-          border-radius: 100px;
-          margin-bottom: 16px;
-        }
-        .brand-badge img { height: 22px; width: auto; object-fit: contain; }
-        .brand-badge span {
-          font-size: 12px;
-          font-weight: 600;
-          color: var(--text-secondary);
-          letter-spacing: 0.04em;
-        }
-
-        /* --- PRODUCT FEATURE IMAGE --- */
-        .product-feature {
-          border-radius: 20px;
-          overflow: hidden;
-          border: 1px solid var(--border);
-          margin: 32px 0;
-          background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
-        }
-        .product-feature img {
-          width: 100%;
-          height: 320px;
-          object-fit: contain;
-          padding: 32px;
-          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .product-feature:hover img { transform: scale(1.05); }
-        .product-feature__caption {
-          padding: 14px 24px;
-          border-top: 1px solid var(--border);
-          font-size: 13px;
-          color: var(--text-muted);
-          font-weight: 500;
-        }
-        @media (max-width: 768px) {
-          .product-feature img { height: 220px; padding: 20px; }
-        }
     </style>
 </head>
 <body>
@@ -1170,13 +989,6 @@
                 <img src="https://i.postimg.cc/8zjYFp74/Design-sans-titre-12.png" alt="Kevin Cleonis" class="hero-photo">
             </div>
         </div>
-        <!-- Decorative products -->
-        <div class="section-deco section-deco--circle section-deco--float" style="width:110px;height:110px;left:-20px;top:25%;opacity:0.5;">
-            <img src="https://moonela.co.uk/cdn/shop/files/elegant-moon-necklace-moonela-edition-6038664.png?v=1771007470&width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:90px;height:90px;right:20px;bottom:20%;opacity:0.45;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_Whitening_Pen.png?width=250" alt="" loading="lazy">
-        </div>
     </section>
 
     <!-- ABOUT -->
@@ -1197,38 +1009,11 @@
             <div class="skill"><div class="skill-check">✓</div><div><p class="skill-title">Email & Retention</p><p class="skill-text">Lifecycle flows, LTV optimization</p></div></div>
             <div class="skill"><div class="skill-check">✓</div><div><p class="skill-title">P&L & Unit Economics</p><p class="skill-text">Margins, sustainable growth</p></div></div>
         </div>
-        <div style="text-align:center;margin-top:56px;">
-          <p class="media-label" style="margin-bottom:20px;">Brands I've Built & Managed</p>
-          <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;">
-            <div style="width:120px;height:120px;border-radius:50%;overflow:hidden;border:2px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;transition:all 0.4s ease;" onmouseover="this.style.borderColor='var(--border-accent)';this.style.transform='scale(1.08)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='scale(1)'">
-              <img src="https://icybeardental.com/cdn/shop/files/ICY-BEAR-logo-1024x765.png?v=1692260522" alt="Icy Bear Dental" style="width:70%;height:auto;object-fit:contain;" loading="lazy">
-            </div>
-            <div style="width:120px;height:120px;border-radius:50%;overflow:hidden;border:2px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;transition:all 0.4s ease;" onmouseover="this.style.borderColor='var(--border-accent)';this.style.transform='scale(1.08)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='scale(1)'">
-              <img src="https://moonela.co.uk/cdn/shop/files/LOGO_2ND__6_-removebg-preview.png?height=120&v=1754574677" alt="Moonela" style="width:70%;height:auto;object-fit:contain;" loading="lazy">
-            </div>
-          </div>
-        </div>
-        <!-- Decorative products -->
-        <div class="section-deco section-deco--circle section-deco--float" style="width:120px;height:120px;right:30px;top:15%;opacity:0.4;">
-            <img src="https://moonela.co.uk/cdn/shop/files/nala-pearl-earrings-7499423.png?v=1771007355&width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:100px;height:100px;left:10px;bottom:10%;opacity:0.4;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Mouthwash.png?width=250" alt="" loading="lazy">
-        </div>
     </section>
-
-    <div class="section-divider" style="background:linear-gradient(180deg,var(--bg-light) 0%,var(--bg-white) 100%);">
-      <div class="section-divider__line"></div>
-      <div class="section-divider__image"><img src="https://icybeardental.com/cdn/shop/files/Teeth_Whitening_Kit.png?v=1770981672&width=200" alt="" loading="lazy"></div>
-      <div class="section-divider__image"><img src="https://icybeardental.com/cdn/shop/files/Teeth_Whitening_Strips_28_Pack.png?v=1770981609&width=200" alt="" loading="lazy"></div>
-      <div class="section-divider__image"><img src="https://icybeardental.com/cdn/shop/files/Teeth_Whitening_Toothpaste_cd8d4aec-43f1-4707-a95b-1facf050894a.png?v=1770981673&width=200" alt="" loading="lazy"></div>
-      <div class="section-divider__line"></div>
-    </div>
 
     <!-- ICY BEAR -->
     <section class="section section-white" id="icybear">
         <div class="section-header">
-            <div class="brand-badge"><img src="https://icybeardental.com/cdn/shop/files/ICY-BEAR-logo-1024x765.png?v=1692260522" alt="Icy Bear"><span>icybeardental.com</span></div>
             <p class="section-eyebrow">Current Role</p>
             <h2 class="section-title">Icy Bear <span class="accent">Dental</span></h2>
             <p class="section-subtitle">Icy Bear Dental is a fast-growing UK oral care brand generating 7-figure annual revenue, specialising in teeth whitening products. As E-commerce Manager & Digital Strategist, I lead the full paid social strategy, ad production pipeline, content operations, and Shopify rebranding — coordinating between internal teams, external agencies, and freelance UGC creators.</p>
@@ -1264,16 +1049,6 @@
                     <p class="metric-label">Purchases Driven</p>
                 </div>
             </div>
-        </div>
-
-        <div style="max-width:1100px;margin:0 auto 48px;">
-          <p class="media-label" style="text-align:center;margin-bottom:20px;">Product Range</p>
-          <div class="product-showcase">
-            <div class="product-showcase__item"><img src="https://icybeardental.com/cdn/shop/files/Teeth_Whitening_Kit.png?v=1770981672&width=500" alt="Whitening Kit" loading="lazy"><div class="product-showcase__label">Whitening Kit</div></div>
-            <div class="product-showcase__item"><img src="https://icybeardental.com/cdn/shop/files/Teeth_Whitening_Strips_28_Pack.png?v=1770981609&width=500" alt="Whitening Strips" loading="lazy"><div class="product-showcase__label">Whitening Strips</div></div>
-            <div class="product-showcase__item"><img src="https://icybeardental.com/cdn/shop/files/Teeth_Whitening_Toothpaste_cd8d4aec-43f1-4707-a95b-1facf050894a.png?v=1770981673&width=500" alt="Toothpaste" loading="lazy"><div class="product-showcase__label">Toothpaste</div></div>
-            <div class="product-showcase__item"><img src="https://icybeardental.com/cdn/shop/files/Power_Smile_Bundle.png?v=1770981672&width=500" alt="Power Bundle" loading="lazy"><div class="product-showcase__label">Power Bundle</div></div>
-          </div>
         </div>
 
         <!-- PROJECT 0: PAID SOCIAL -->
@@ -1391,39 +1166,11 @@
                 </div>
             </div>
         </div>
-        <!-- Decorative products -->
-        <div class="section-deco section-deco--circle section-deco--float" style="width:130px;height:130px;left:15px;top:8%;opacity:0.5;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Whitening_Kit.png?width=300" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:110px;height:110px;right:15px;top:30%;opacity:0.45;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_Whitening_Strips_28_Pack.png?width=300" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float" style="width:100px;height:100px;left:25px;top:55%;opacity:0.4;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Next_Generation_Sonic_Toothbrush.png?width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:120px;height:120px;right:20px;top:70%;opacity:0.45;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Breath_Spray.png?width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float" style="width:95px;height:95px;right:40px;bottom:8%;opacity:0.4;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_whitening_powder.png?width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:105px;height:105px;left:20px;bottom:15%;opacity:0.4;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Sensitive_Toothpaste.png?width=250" alt="" loading="lazy">
-        </div>
     </section>
-
-    <div class="section-divider" style="background:linear-gradient(180deg,var(--bg-white) 0%,var(--bg-light) 100%);">
-      <div class="section-divider__line"></div>
-      <div class="section-divider__image"><img src="https://moonela.co.uk/cdn/shop/files/arabic-name-necklace-custom-gold-calligraphy-6938463.webp?v=1771753085&width=200" alt="" loading="lazy"></div>
-      <div class="section-divider__image"><img src="https://moonela.co.uk/cdn/shop/files/62.avif?v=1771619296&width=200" alt="" loading="lazy"></div>
-      <div class="section-divider__image"><img src="https://moonela.co.uk/cdn/shop/files/1.avif?v=1771544077&width=200" alt="" loading="lazy"></div>
-      <div class="section-divider__line"></div>
-    </div>
 
     <!-- MOONELA -->
     <section class="section section-gray" id="moonela">
         <div class="section-header">
-            <div class="brand-badge"><img src="https://moonela.co.uk/cdn/shop/files/LOGO_2ND__6_-removebg-preview.png?height=40&v=1754574677" alt="Moonela"><span>moonela.co.uk</span></div>
             <p class="section-eyebrow">My Brand</p>
             <h2 class="section-title"><span class="accent">Moonela</span></h2>
             <p class="section-subtitle">Premium DTC jewelry brand built from scratch. Full ownership from product to customer.</p>
@@ -1442,15 +1189,6 @@
                     <div class="highlight"><p class="highlight-title">🎯 Multi-Channel</p><p class="highlight-text">Facebook Ads, Instagram organic, TikTok, ambassador program.</p></div>
                     <div class="highlight"><p class="highlight-title">🛒 Full E-commerce</p><p class="highlight-text">Shopify design, UX optimization, conversion-focused pages.</p></div>
                     <div class="highlight"><p class="highlight-title">🤖 AI Workflow</p><p class="highlight-text">AI for photo enhancement and creative testing optimization.</p></div>
-                </div>
-                <div class="media-block">
-                  <p class="media-label">Product Line</p>
-                  <div class="product-showcase">
-                    <div class="product-showcase__item" style="height:220px;"><img src="https://moonela.co.uk/cdn/shop/files/arabic-name-necklace-custom-gold-calligraphy-6938463.webp?v=1771753085&width=500" alt="Name Necklace" loading="lazy"><div class="product-showcase__label">Name Necklaces</div></div>
-                    <div class="product-showcase__item" style="height:220px;"><img src="https://moonela.co.uk/cdn/shop/files/62.avif?v=1771619296&width=500" alt="Custom Ring" loading="lazy"><div class="product-showcase__label">Custom Rings</div></div>
-                    <div class="product-showcase__item" style="height:220px;"><img src="https://moonela.co.uk/cdn/shop/files/1.avif?v=1771544077&width=500" alt="Signature Ring" loading="lazy"><div class="product-showcase__label">Signature Rings</div></div>
-                    <div class="product-showcase__item" style="height:220px;"><img src="https://cdn.shopify.com/s/files/1/0919/3318/0182/files/image_11.webp?v=1771287542" alt="Bracelets" loading="lazy"><div class="product-showcase__label">Bracelets</div></div>
-                  </div>
                 </div>
                 <div class="media-block">
                     <p class="media-label">Moonela Photoshoot — Shot by Me</p>
@@ -1484,25 +1222,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Decorative products -->
-        <div class="section-deco section-deco--circle section-deco--float" style="width:130px;height:130px;right:15px;top:5%;opacity:0.5;">
-            <img src="https://moonela.co.uk/cdn/shop/files/arabic-name-necklace-custom-gold-calligraphy-7705848.png?v=1771727573&width=300" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:110px;height:110px;left:15px;top:20%;opacity:0.45;">
-            <img src="https://moonela.co.uk/cdn/shop/files/rose-quartz-ring-the-gem-7168485.png?v=1771007529&width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float" style="width:100px;height:100px;right:25px;top:45%;opacity:0.4;">
-            <img src="https://moonela.co.uk/cdn/shop/files/celestial-glow-ring-5850218.png?v=1771007417&width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:115px;height:115px;left:20px;top:60%;opacity:0.45;">
-            <img src="https://moonela.co.uk/cdn/shop/files/aurora-princess-cut-hoop-4214111.png?v=1771007350&width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float" style="width:105px;height:105px;right:20px;bottom:15%;opacity:0.4;">
-            <img src="https://moonela.co.uk/cdn/shop/files/bubble-letter-necklace-custom-gold-initial-6172542.png?v=1771007413&width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:95px;height:95px;left:30px;bottom:5%;opacity:0.4;">
-            <img src="https://moonela.co.uk/cdn/shop/files/baroque-pearl-pendant-4796887.png?v=1771007415&width=250" alt="" loading="lazy">
         </div>
     </section>
 
@@ -1541,13 +1260,6 @@
             </div>
         </div>
     </section>
-
-    <div class="section-divider" style="background:linear-gradient(180deg,var(--bg-white) 0%,var(--bg-dark) 100%);height:140px;">
-      <div class="section-divider__line" style="background:rgba(255,255,255,0.2);"></div>
-      <div class="section-divider__image" style="border-color:rgba(255,255,255,0.15);"><img src="https://icybeardental.com/cdn/shop/files/ICY-BEAR-logo-1024x765.png?v=1692260522" alt="" loading="lazy"></div>
-      <div class="section-divider__image" style="border-color:rgba(255,255,255,0.15);"><img src="https://moonela.co.uk/cdn/shop/files/LOGO_2ND__6_-removebg-preview.png?height=80&v=1754574677" alt="" loading="lazy"></div>
-      <div class="section-divider__line" style="background:rgba(255,255,255,0.2);"></div>
-    </div>
 
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
@@ -1619,16 +1331,6 @@
                 </div>
             </div>
         </div>
-        <!-- Decorative products -->
-        <div class="section-deco section-deco--circle section-deco--float" style="width:100px;height:100px;left:15px;top:10%;opacity:0.3;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Fresh_Breath_Bundle.png?width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:90px;height:90px;right:15px;top:40%;opacity:0.3;">
-            <img src="https://moonela.co.uk/cdn/shop/files/the-heartline-ring-9844871.png?v=1771007414&width=250" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float" style="width:85px;height:85px;left:25px;bottom:15%;opacity:0.25;">
-            <img src="https://moonela.co.uk/cdn/shop/files/milky-way-moonela-earrings-1192535.png?v=1771007352&width=250" alt="" loading="lazy">
-        </div>
     </section>
 
     <!-- CONTACT -->
@@ -1639,13 +1341,6 @@
         <div class="contact-buttons">
             <a href="https://www.linkedin.com/in/kevin-cleonis-77880211b/" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> View LinkedIn Profile</a>
             <a href="mailto:kevincleonis@icloud.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> kevincleonis@icloud.com</a>
-        </div>
-        <!-- Decorative products -->
-        <div class="section-deco section-deco--circle section-deco--float" style="width:80px;height:80px;left:10%;top:15%;opacity:0.25;">
-            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Lip_Oil.png?width=200" alt="" loading="lazy">
-        </div>
-        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:75px;height:75px;right:10%;bottom:20%;opacity:0.25;">
-            <img src="https://moonela.co.uk/cdn/shop/files/clara-diamond-cluster-stud-5792906.png?v=1771007349&width=200" alt="" loading="lazy">
         </div>
     </section>
 
