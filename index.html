@@ -153,9 +153,9 @@
 
         /* HERO */
         .hero {
-            min-height: 100vh; background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+            min-height: auto; background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
             display: flex; align-items: center;
-            padding: 140px 80px; position: relative; overflow: hidden;
+            padding: 120px 80px 80px; position: relative; overflow: hidden;
         }
 
         .hero::before {
@@ -285,7 +285,7 @@
         }
 
         /* SECTIONS */
-        .section { padding: 160px 80px; position: relative; }
+        .section { padding: 100px 80px; position: relative; }
         .section-white { background: var(--bg-white); }
         .section-gray { background: var(--bg-light); }
         .section-dark { 
@@ -307,7 +307,7 @@
 
         .section-header {
             text-align: center; max-width: 700px;
-            margin: 0 auto 100px;
+            margin: 0 auto 60px;
         }
 
         .section-eyebrow {
@@ -408,7 +408,7 @@
 
         /* PROJECT */
         .project {
-            max-width: 1100px; margin: 0 auto 120px;
+            max-width: 1100px; margin: 0 auto 80px;
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 32px; overflow: hidden;
             transition: all 0.5s ease; position: relative;
@@ -572,7 +572,7 @@
 
         /* TESTIMONIALS */
         .testimonials {
-            padding: 180px 80px; background: var(--bg-dark);
+            padding: 100px 80px; background: var(--bg-dark);
             text-align: center; position: relative; overflow: hidden;
             color: #fff;
         }
@@ -685,7 +685,7 @@
 
         /* CONTACT */
         .contact {
-            padding: 180px 80px; text-align: center;
+            padding: 100px 80px; text-align: center;
             background: linear-gradient(180deg, var(--bg-light) 0%, #fff 100%);
             position: relative; overflow: hidden;
         }
@@ -907,9 +907,9 @@
             .hero-cta { justify-content: center; flex-wrap: wrap; }
             .hero-photo { width: 300px; height: 300px; }
             .hero-eyebrow::before, .hero-eyebrow::after { width: 20px; }
-            .section { padding: 120px 24px; }
+            .section { padding: 80px 24px; }
             .section-title { font-size: 36px; }
-            .section-header { margin-bottom: 64px; }
+            .section-header { margin-bottom: 48px; }
             .cards-grid, .skills-grid { grid-template-columns: 1fr; }
             .highlights { grid-template-columns: 1fr; }
             .carousel { grid-template-columns: 1fr; }
@@ -917,12 +917,12 @@
             .project-header, .project-body { padding: 40px; }
             .project-title { font-size: 32px; }
             .project-hero-image iframe { height: 300px; }
-            .testimonials { padding: 120px 24px; }
+            .testimonials { padding: 80px 24px; }
             .testimonials-number { font-size: 80px; }
             .testimonials-title { font-size: 36px; }
             .testimonials-cards { grid-template-columns: 1fr; }
             .quotes-grid { grid-template-columns: 1fr; }
-            .contact { padding: 120px 24px; }
+            .contact { padding: 80px 24px; }
             .contact-title { font-size: 40px; }
             .contact-buttons { flex-direction: column; align-items: center; }
         }
@@ -998,39 +998,7 @@
             <h2 class="section-title">What I <span class="accent">Do</span></h2>
             <p class="section-subtitle">End-to-end e-commerce management: from paid media and CRO to team processes, ad production pipelines, and P&L ownership.</p>
         </div>
-        <div class="cards-grid">
-            <div class="card">
-                <span class="card-icon">🎯</span>
-                <h3 class="card-title">Creator-Led Acquisition</h3>
-                <p class="card-text">Building authentic, high-trust acquisition funnels across Meta, TikTok, and YouTube.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">🎨</span>
-                <h3 class="card-title">Conversion-Focused Branding</h3>
-                <p class="card-text">Premium brand experiences with CRO on product pages and checkout optimization.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">📊</span>
-                <h3 class="card-title">GA4 & KPI Analysis</h3>
-                <p class="card-text">Custom dashboards providing real-time insights for data-driven decisions.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">📧</span>
-                <h3 class="card-title">Lifecycle Email Flows</h3>
-                <p class="card-text">Automated sequences that increase LTV through nurturing and retention.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">📱</span>
-                <h3 class="card-title">Social Media & Content</h3>
-                <p class="card-text">Managing content across platforms, building community and driving demand.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">⚡</span>
-                <h3 class="card-title">Test Fast, Learn Faster</h3>
-                <p class="card-text">Fast experiments, clear dashboards, weekly KPI cadence. Transparent approach.</p>
-            </div>
-        </div>
-        <div class="skills-grid">
+        <div class="skills-grid" style="margin-top: 0;">
             <div class="skill"><div class="skill-check">✓</div><div><p class="skill-title">Full E-commerce Funnel</p><p class="skill-text">Traffic to conversion, AOV & retention</p></div></div>
             <div class="skill"><div class="skill-check">✓</div><div><p class="skill-title">Shopify & DTC Expert</p><p class="skill-text">Store builds, CRO, A/B testing</p></div></div>
             <div class="skill"><div class="skill-check">✓</div><div><p class="skill-title">Multi-Platform Paid Media</p><p class="skill-text">Meta, TikTok, Google, YouTube Ads</p></div></div>
@@ -1069,8 +1037,8 @@
             </div>
             <div class="metrics-row" style="margin-top: 20px;">
                 <div class="metric-card">
-                    <p class="metric-value red" style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 50%, #48cae4 100%); -webkit-background-clip: text; background-clip: text;">-25%</p>
-                    <p class="metric-label">Cost Per Click (CPC)</p>
+                    <p class="metric-value" style="background: linear-gradient(135deg, #2d6a4f 0%, #40916c 50%, #52b788 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">25%</p>
+                    <p class="metric-label">CPC Reduction</p>
                 </div>
                 <div class="metric-card">
                     <p class="metric-value" style="background: linear-gradient(135deg, #6b7280 0%, #9ca3af 50%, #6b7280 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">2.16</p>
