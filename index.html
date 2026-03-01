@@ -926,49 +926,45 @@
             .contact-title { font-size: 40px; }
             .contact-buttons { flex-direction: column; align-items: center; }
         }
-        /* --- SIDE PRODUCT RAILS --- */
-        .product-rail {
-            position: fixed;
-            top: 80px;
-            bottom: 0;
-            width: 130px;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px 0;
+        /* --- CONTEXTUAL SECTION DECORATIONS --- */
+        .section-deco {
+            position: absolute;
             pointer-events: none;
+            z-index: 1;
         }
-        .product-rail--left { left: 10px; }
-        .product-rail--right { right: 10px; }
-        .product-rail img {
-            width: 100px;
-            height: 100px;
+        .section-deco img {
+            width: 100%;
+            height: 100%;
             object-fit: contain;
-            opacity: 0.2;
-            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
-            border-radius: 16px;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            animation: gentleFloat 8s ease-in-out infinite;
+            border-radius: 20px;
+            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.08));
         }
-        .product-rail img:nth-child(even) {
-            animation-delay: -3s;
-            animation-duration: 10s;
+        .section-deco--circle img {
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.8);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 8px;
         }
-        .product-rail img:nth-child(3n) {
-            animation-delay: -6s;
-            animation-duration: 12s;
+        .section-deco--float {
+            animation: decoFloat 10s ease-in-out infinite;
         }
-        @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+        .section-deco--float-alt {
+            animation: decoFloat 12s ease-in-out infinite reverse;
         }
-        @media (max-width: 1400px) {
-            .product-rail img { width: 80px; height: 80px; opacity: 0.15; }
+        @keyframes decoFloat {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
         }
-        @media (max-width: 1200px) {
-            .product-rail { display: none; }
+
+        /* Ensure sections that contain deco have position relative */
+        .hero, .section, .testimonials, .contact {
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 1100px) {
+            .section-deco { display: none; }
         }
 
         /* --- PRODUCT SHOWCASE --- */
@@ -1114,24 +1110,6 @@
     </style>
 </head>
 <body>
-    <!-- SIDE PRODUCT RAILS -->
-    <div class="product-rail product-rail--left">
-        <img src="https://moonela.co.uk/cdn/shop/files/arabic-name-necklace-custom-gold-calligraphy-7705848.png?v=1771727573&width=300" alt="Moonela Arabic Name Necklace" loading="lazy">
-        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_Whitening_Strips_28_Pack.png?width=300" alt="Icy Bear Whitening Strips" loading="lazy">
-        <img src="https://moonela.co.uk/cdn/shop/files/rose-quartz-ring-the-gem-7168485.png?v=1771007529&width=300" alt="Moonela Rose Quartz Ring" loading="lazy">
-        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Mouthwash.png?width=300" alt="Icy Bear Mouthwash" loading="lazy">
-        <img src="https://moonela.co.uk/cdn/shop/files/nala-pearl-earrings-7499423.png?v=1771007355&width=300" alt="Moonela Nala Pearl Earrings" loading="lazy">
-        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_Whitening_Pen.png?width=300" alt="Icy Bear Whitening Pen" loading="lazy">
-    </div>
-    <div class="product-rail product-rail--right">
-        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Whitening_Kit.png?width=300" alt="Icy Bear Whitening Kit" loading="lazy">
-        <img src="https://moonela.co.uk/cdn/shop/files/elegant-moon-necklace-moonela-edition-6038664.png?v=1771007470&width=300" alt="Moonela Elegant Moon Necklace" loading="lazy">
-        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Next_Generation_Sonic_Toothbrush.png?width=300" alt="Icy Bear Sonic Toothbrush" loading="lazy">
-        <img src="https://moonela.co.uk/cdn/shop/files/celestial-glow-ring-5850218.png?v=1771007417&width=300" alt="Moonela Celestial Glow Ring" loading="lazy">
-        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Sensitive_Toothpaste.png?width=300" alt="Icy Bear Sensitive Toothpaste" loading="lazy">
-        <img src="https://moonela.co.uk/cdn/shop/files/aurora-princess-cut-hoop-4214111.png?v=1771007350&width=300" alt="Moonela Aurora Princess Cut Hoops" loading="lazy">
-    </div>
-
     <div class="progress" id="progress"></div>
 
     <!-- NAVIGATION -->
@@ -1192,6 +1170,13 @@
                 <img src="https://i.postimg.cc/8zjYFp74/Design-sans-titre-12.png" alt="Kevin Cleonis" class="hero-photo">
             </div>
         </div>
+        <!-- Decorative products -->
+        <div class="section-deco section-deco--circle section-deco--float" style="width:110px;height:110px;left:-20px;top:25%;opacity:0.5;">
+            <img src="https://moonela.co.uk/cdn/shop/files/elegant-moon-necklace-moonela-edition-6038664.png?v=1771007470&width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:90px;height:90px;right:20px;bottom:20%;opacity:0.45;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_Whitening_Pen.png?width=250" alt="" loading="lazy">
+        </div>
     </section>
 
     <!-- ABOUT -->
@@ -1222,6 +1207,13 @@
               <img src="https://moonela.co.uk/cdn/shop/files/LOGO_2ND__6_-removebg-preview.png?height=120&v=1754574677" alt="Moonela" style="width:70%;height:auto;object-fit:contain;" loading="lazy">
             </div>
           </div>
+        </div>
+        <!-- Decorative products -->
+        <div class="section-deco section-deco--circle section-deco--float" style="width:120px;height:120px;right:30px;top:15%;opacity:0.4;">
+            <img src="https://moonela.co.uk/cdn/shop/files/nala-pearl-earrings-7499423.png?v=1771007355&width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:100px;height:100px;left:10px;bottom:10%;opacity:0.4;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Mouthwash.png?width=250" alt="" loading="lazy">
         </div>
     </section>
 
@@ -1399,6 +1391,25 @@
                 </div>
             </div>
         </div>
+        <!-- Decorative products -->
+        <div class="section-deco section-deco--circle section-deco--float" style="width:130px;height:130px;left:15px;top:8%;opacity:0.5;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Whitening_Kit.png?width=300" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:110px;height:110px;right:15px;top:30%;opacity:0.45;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_Whitening_Strips_28_Pack.png?width=300" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float" style="width:100px;height:100px;left:25px;top:55%;opacity:0.4;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Next_Generation_Sonic_Toothbrush.png?width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:120px;height:120px;right:20px;top:70%;opacity:0.45;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Breath_Spray.png?width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float" style="width:95px;height:95px;right:40px;bottom:8%;opacity:0.4;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_whitening_powder.png?width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:105px;height:105px;left:20px;bottom:15%;opacity:0.4;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Sensitive_Toothpaste.png?width=250" alt="" loading="lazy">
+        </div>
     </section>
 
     <div class="section-divider" style="background:linear-gradient(180deg,var(--bg-white) 0%,var(--bg-light) 100%);">
@@ -1473,6 +1484,25 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Decorative products -->
+        <div class="section-deco section-deco--circle section-deco--float" style="width:130px;height:130px;right:15px;top:5%;opacity:0.5;">
+            <img src="https://moonela.co.uk/cdn/shop/files/arabic-name-necklace-custom-gold-calligraphy-7705848.png?v=1771727573&width=300" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:110px;height:110px;left:15px;top:20%;opacity:0.45;">
+            <img src="https://moonela.co.uk/cdn/shop/files/rose-quartz-ring-the-gem-7168485.png?v=1771007529&width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float" style="width:100px;height:100px;right:25px;top:45%;opacity:0.4;">
+            <img src="https://moonela.co.uk/cdn/shop/files/celestial-glow-ring-5850218.png?v=1771007417&width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:115px;height:115px;left:20px;top:60%;opacity:0.45;">
+            <img src="https://moonela.co.uk/cdn/shop/files/aurora-princess-cut-hoop-4214111.png?v=1771007350&width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float" style="width:105px;height:105px;right:20px;bottom:15%;opacity:0.4;">
+            <img src="https://moonela.co.uk/cdn/shop/files/bubble-letter-necklace-custom-gold-initial-6172542.png?v=1771007413&width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:95px;height:95px;left:30px;bottom:5%;opacity:0.4;">
+            <img src="https://moonela.co.uk/cdn/shop/files/baroque-pearl-pendant-4796887.png?v=1771007415&width=250" alt="" loading="lazy">
         </div>
     </section>
 
@@ -1589,6 +1619,16 @@
                 </div>
             </div>
         </div>
+        <!-- Decorative products -->
+        <div class="section-deco section-deco--circle section-deco--float" style="width:100px;height:100px;left:15px;top:10%;opacity:0.3;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Fresh_Breath_Bundle.png?width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:90px;height:90px;right:15px;top:40%;opacity:0.3;">
+            <img src="https://moonela.co.uk/cdn/shop/files/the-heartline-ring-9844871.png?v=1771007414&width=250" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float" style="width:85px;height:85px;left:25px;bottom:15%;opacity:0.25;">
+            <img src="https://moonela.co.uk/cdn/shop/files/milky-way-moonela-earrings-1192535.png?v=1771007352&width=250" alt="" loading="lazy">
+        </div>
     </section>
 
     <!-- CONTACT -->
@@ -1599,6 +1639,13 @@
         <div class="contact-buttons">
             <a href="https://www.linkedin.com/in/kevin-cleonis-77880211b/" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> View LinkedIn Profile</a>
             <a href="mailto:kevincleonis@icloud.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> kevincleonis@icloud.com</a>
+        </div>
+        <!-- Decorative products -->
+        <div class="section-deco section-deco--circle section-deco--float" style="width:80px;height:80px;left:10%;top:15%;opacity:0.25;">
+            <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Lip_Oil.png?width=200" alt="" loading="lazy">
+        </div>
+        <div class="section-deco section-deco--circle section-deco--float-alt" style="width:75px;height:75px;right:10%;bottom:20%;opacity:0.25;">
+            <img src="https://moonela.co.uk/cdn/shop/files/clara-diamond-cluster-stud-5792906.png?v=1771007349&width=200" alt="" loading="lazy">
         </div>
     </section>
 
