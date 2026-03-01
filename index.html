@@ -926,39 +926,49 @@
             .contact-title { font-size: 40px; }
             .contact-buttons { flex-direction: column; align-items: center; }
         }
-        /* --- FLOATING PRODUCT IMAGES --- */
-        .floating-product {
-          position: absolute;
-          z-index: 1;
-          pointer-events: none;
-          transition: opacity 0.6s ease;
+        /* --- SIDE PRODUCT RAILS --- */
+        .product-rail {
+            position: fixed;
+            top: 80px;
+            bottom: 0;
+            width: 130px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+            pointer-events: none;
         }
-        .floating-product img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+        .product-rail--left { left: 10px; }
+        .product-rail--right { right: 10px; }
+        .product-rail img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            opacity: 0.2;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+            border-radius: 16px;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            animation: gentleFloat 8s ease-in-out infinite;
         }
-        .floating-product--sm { width: 120px; height: 120px; }
-        .floating-product--md { width: 180px; height: 180px; }
-        .floating-product--lg { width: 240px; height: 240px; }
-        .floating-product--float {
-          animation: floatProduct 12s ease-in-out infinite;
+        .product-rail img:nth-child(even) {
+            animation-delay: -3s;
+            animation-duration: 10s;
         }
-        .floating-product--float-delay {
-          animation: floatProduct 14s ease-in-out infinite;
-          animation-delay: -4s;
+        .product-rail img:nth-child(3n) {
+            animation-delay: -6s;
+            animation-duration: 12s;
         }
-        @keyframes floatProduct {
-          0%, 100% { transform: translateY(0) rotate(-3deg); }
-          50% { transform: translateY(-20px) rotate(3deg); }
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @media (max-width: 1400px) {
+            .product-rail img { width: 80px; height: 80px; opacity: 0.15; }
         }
         @media (max-width: 1200px) {
-          .floating-product--lg { width: 160px; height: 160px; }
-          .floating-product--md { width: 120px; height: 120px; }
-        }
-        @media (max-width: 768px) {
-          .floating-product { display: none; }
+            .product-rail { display: none; }
         }
 
         /* --- PRODUCT SHOWCASE --- */
@@ -1104,6 +1114,24 @@
     </style>
 </head>
 <body>
+    <!-- SIDE PRODUCT RAILS -->
+    <div class="product-rail product-rail--left">
+        <img src="https://moonela.co.uk/cdn/shop/files/arabic-name-necklace-custom-gold-calligraphy-7705848.png?v=1771727573&width=300" alt="Moonela Arabic Name Necklace" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_Whitening_Strips_28_Pack.png?width=300" alt="Icy Bear Whitening Strips" loading="lazy">
+        <img src="https://moonela.co.uk/cdn/shop/files/rose-quartz-ring-the-gem-7168485.png?v=1771007529&width=300" alt="Moonela Rose Quartz Ring" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Mouthwash.png?width=300" alt="Icy Bear Mouthwash" loading="lazy">
+        <img src="https://moonela.co.uk/cdn/shop/files/nala-pearl-earrings-7499423.png?v=1771007355&width=300" alt="Moonela Nala Pearl Earrings" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Teeth_Whitening_Pen.png?width=300" alt="Icy Bear Whitening Pen" loading="lazy">
+    </div>
+    <div class="product-rail product-rail--right">
+        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Whitening_Kit.png?width=300" alt="Icy Bear Whitening Kit" loading="lazy">
+        <img src="https://moonela.co.uk/cdn/shop/files/elegant-moon-necklace-moonela-edition-6038664.png?v=1771007470&width=300" alt="Moonela Elegant Moon Necklace" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Next_Generation_Sonic_Toothbrush.png?width=300" alt="Icy Bear Sonic Toothbrush" loading="lazy">
+        <img src="https://moonela.co.uk/cdn/shop/files/celestial-glow-ring-5850218.png?v=1771007417&width=300" alt="Moonela Celestial Glow Ring" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0802/0285/8795/files/Sensitive_Toothpaste.png?width=300" alt="Icy Bear Sensitive Toothpaste" loading="lazy">
+        <img src="https://moonela.co.uk/cdn/shop/files/aurora-princess-cut-hoop-4214111.png?v=1771007350&width=300" alt="Moonela Aurora Princess Cut Hoops" loading="lazy">
+    </div>
+
     <div class="progress" id="progress"></div>
 
     <!-- NAVIGATION -->
@@ -1128,8 +1156,6 @@
     <!-- HERO -->
     <section class="hero" id="hero">
         <div class="hero-decoration"></div>
-        <div class="floating-product floating-product--md floating-product--float" style="left:5%;top:20%;opacity:0.08;"><img src="https://moonela.co.uk/cdn/shop/files/arabic-name-necklace-custom-gold-calligraphy-6938463.webp?v=1771753085&width=400" alt="" loading="lazy"></div>
-        <div class="floating-product floating-product--sm floating-product--float-delay" style="right:8%;bottom:15%;opacity:0.06;"><img src="https://icybeardental.com/cdn/shop/files/Teeth_Whitening_Kit.png?v=1770981672&width=400" alt="" loading="lazy"></div>
         <div class="hero-inner">
             <div class="hero-content">
                 <span class="hero-eyebrow animate">E-commerce Manager & Digital Strategist</span>
@@ -1209,8 +1235,6 @@
 
     <!-- ICY BEAR -->
     <section class="section section-white" id="icybear">
-        <div class="floating-product floating-product--lg floating-product--float" style="left:0%;top:8%;opacity:0.06;"><img src="https://icybeardental.com/cdn/shop/files/Mouthwash.png?v=1770981667&width=400" alt="" loading="lazy"></div>
-        <div class="floating-product floating-product--md floating-product--float-delay" style="right:1%;top:40%;opacity:0.05;"><img src="https://icybeardental.com/cdn/shop/files/Sensitive_Toothpaste.png?v=1770981619&width=400" alt="" loading="lazy"></div>
         <div class="section-header">
             <div class="brand-badge"><img src="https://icybeardental.com/cdn/shop/files/ICY-BEAR-logo-1024x765.png?v=1692260522" alt="Icy Bear"><span>icybeardental.com</span></div>
             <p class="section-eyebrow">Current Role</p>
@@ -1387,8 +1411,6 @@
 
     <!-- MOONELA -->
     <section class="section section-gray" id="moonela">
-        <div class="floating-product floating-product--lg floating-product--float" style="right:0%;top:5%;opacity:0.07;"><img src="https://cdn.shopify.com/s/files/1/0919/3318/0182/files/image_7.webp?v=1771286428" alt="" loading="lazy"></div>
-        <div class="floating-product floating-product--md floating-product--float-delay" style="left:1%;top:35%;opacity:0.06;"><img src="https://moonela.co.uk/cdn/shop/files/64.avif?v=1771619296&width=400" alt="" loading="lazy"></div>
         <div class="section-header">
             <div class="brand-badge"><img src="https://moonela.co.uk/cdn/shop/files/LOGO_2ND__6_-removebg-preview.png?height=40&v=1754574677" alt="Moonela"><span>moonela.co.uk</span></div>
             <p class="section-eyebrow">My Brand</p>
@@ -1499,8 +1521,6 @@
 
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
-        <div class="floating-product floating-product--lg floating-product--float" style="left:0%;top:8%;opacity:0.04;"><img src="https://cdn.shopify.com/s/files/1/0919/3318/0182/files/image_25.webp?v=1771629375" alt="" loading="lazy" style="filter:brightness(1.5);"></div>
-        <div class="floating-product floating-product--md floating-product--float-delay" style="right:1%;top:25%;opacity:0.04;"><img src="https://icybeardental.com/cdn/shop/files/Teeth_Whitening_Kit.png?v=1770981672&width=400" alt="" loading="lazy" style="filter:brightness(1.3);"></div>
         <p class="section-eyebrow">Career Overview</p>
         <h2 class="testimonials-title">Experience & <span class="accent">Track Record</span></h2>
         <p class="testimonials-text">From managing e-commerce growth at established brands to launching my own DTC businesses — a consistent record of driving revenue through systems and strategy.</p>
