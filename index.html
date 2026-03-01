@@ -926,6 +926,104 @@
             .contact-title { font-size: 40px; }
             .contact-buttons { flex-direction: column; align-items: center; }
         }
+
+        /* --- SITE SCREENSHOTS GALLERY --- */
+        .site-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .site-gallery--three {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .site-gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+        }
+        .site-gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+        }
+        .site-gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .site-gallery-item .site-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 16px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .site-gallery-header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .site-gallery-header h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #6e6e73;
+        }
+        /* Side-by-side layout: screenshot left, content right (or vice versa) */
+        .site-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .site-showcase--reverse {
+            direction: rtl;
+        }
+        .site-showcase--reverse > * {
+            direction: ltr;
+        }
+        .site-showcase-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        .site-showcase-image img {
+            width: 100%;
+            display: block;
+        }
+        .site-showcase-text h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        .site-showcase-text p {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        @media (max-width: 768px) {
+            .site-gallery { grid-template-columns: 1fr; gap: 16px; }
+            .site-gallery--three { grid-template-columns: 1fr; }
+            .site-showcase { grid-template-columns: 1fr; gap: 24px; }
+            .site-showcase--reverse { direction: ltr; }
+        }
     </style>
 </head>
 <body>
@@ -1051,6 +1149,23 @@
             </div>
         </div>
 
+        <!-- SITE SCREENSHOTS -->
+        <div class="site-gallery-header"><h4>The Website I Manage</h4></div>
+        <div class="site-gallery site-gallery--three">
+            <div class="site-gallery-item">
+                <img src="https://files.catbox.moe/4kz7pw.png" alt="Icy Bear Dental Homepage" loading="lazy">
+                <span class="site-label">Homepage — Hero Section</span>
+            </div>
+            <div class="site-gallery-item">
+                <img src="https://files.catbox.moe/a2dhxd.png" alt="Icy Bear Best Sellers" loading="lazy">
+                <span class="site-label">Best Sellers — Product Grid</span>
+            </div>
+            <div class="site-gallery-item">
+                <img src="https://files.catbox.moe/c9ka5t.png" alt="Icy Bear Product Page" loading="lazy">
+                <span class="site-label">Product Page — Whitening Kit</span>
+            </div>
+        </div>
+
         <!-- PROJECT 0: PAID SOCIAL -->
         <div class="project">
             <div class="project-header">
@@ -1166,6 +1281,25 @@
                 </div>
             </div>
         </div>
+
+        <div class="site-showcase">
+            <div class="site-showcase-image">
+                <img src="https://files.catbox.moe/ps68f3.png" alt="Icy Bear Collections" loading="lazy">
+            </div>
+            <div class="site-showcase-text">
+                <h4>Full Product Catalogue</h4>
+                <p>Managing the entire product catalogue on Shopify — from whitening kits and strips to oral care bundles. Optimised product pages with conversion-focused copy, trust badges, and strategic pricing.</p>
+            </div>
+        </div>
+        <div class="site-showcase site-showcase--reverse">
+            <div class="site-showcase-image">
+                <img src="https://files.catbox.moe/46cj00.png" alt="Icy Bear Bundles" loading="lazy">
+            </div>
+            <div class="site-showcase-text">
+                <h4>Bundle Strategy & Social Proof</h4>
+                <p>Created strategic bundles to increase AOV and drive upsells. Featured in woman&home, ITV, and Get The Gloss — leveraging PR coverage across the site for social proof.</p>
+            </div>
+        </div>
     </section>
 
     <!-- MOONELA -->
@@ -1175,6 +1309,24 @@
             <h2 class="section-title"><span class="accent">Moonela</span></h2>
             <p class="section-subtitle">Premium DTC jewelry brand built from scratch. Full ownership from product to customer.</p>
         </div>
+
+        <!-- SITE SCREENSHOTS -->
+        <div class="site-gallery-header"><h4>The Brand I Built</h4></div>
+        <div class="site-gallery site-gallery--three">
+            <div class="site-gallery-item">
+                <img src="https://files.catbox.moe/y45xo2.png" alt="Moonela Homepage" loading="lazy">
+                <span class="site-label">Homepage — Hero & Collections</span>
+            </div>
+            <div class="site-gallery-item">
+                <img src="https://files.catbox.moe/id8u2m.png" alt="Moonela Best Sellers" loading="lazy">
+                <span class="site-label">Best Sellers — Your Most Loved</span>
+            </div>
+            <div class="site-gallery-item">
+                <img src="https://files.catbox.moe/qudbkv.png" alt="Moonela Product Detail" loading="lazy">
+                <span class="site-label">Product Page — Arabic Name Necklace</span>
+            </div>
+        </div>
+
         <div class="project">
             <div class="project-header">
                 <span class="project-tag">DTC Jewelry — Founder</span>
@@ -1221,6 +1373,25 @@
                         <div class="carousel-item"><iframe src="https://drive.google.com/file/d/1wJGZBlimnJuWekND1I2mnB_H6HE4HCL4/preview"></iframe></div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="site-showcase">
+            <div class="site-showcase-image">
+                <img src="https://files.catbox.moe/f23uj6.png" alt="Moonela All Products" loading="lazy">
+            </div>
+            <div class="site-showcase-text">
+                <h4>109 Products Built from Scratch</h4>
+                <p>Built the entire product catalogue from zero — personalised jewellery, rings, necklaces, earrings, and bracelets. Full product photography with Sony A7CII, SEO-optimised descriptions, and Shopify store development.</p>
+            </div>
+        </div>
+        <div class="site-showcase site-showcase--reverse">
+            <div class="site-showcase-image">
+                <img src="https://files.catbox.moe/ookt10.png" alt="Moonela UGC Content" loading="lazy">
+            </div>
+            <div class="site-showcase-text">
+                <h4>UGC & Community Growth</h4>
+                <p>Built a community-driven content strategy with UGC creators, ambassador programs, and Instagram integration. Over 2,600+ weekly impressions on Google Search Console with #1 rankings for target keywords.</p>
             </div>
         </div>
     </section>
