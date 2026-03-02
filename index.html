@@ -696,12 +696,14 @@
         }
 
         .contact::before {
-            content: ''; position: absolute;
+            content: ''; position: absolute; z-index: 0;
             width: 1000px; height: 1000px;
             background: radial-gradient(circle, rgba(107,114,128,0.06) 0%, transparent 60%);
             border-radius: 50%; bottom: -500px; left: 50%;
             transform: translateX(-50%);
         }
+
+        .contact-eyebrow, .contact-title, .contact-text { position: relative; z-index: 1; }
 
         .contact-eyebrow {
             display: inline-flex; align-items: center; gap: 16px;
@@ -728,7 +730,7 @@
             line-height: 1.8; font-weight: 300;
         }
 
-        .contact-buttons { display: flex; gap: 20px; justify-content: center; }
+        .contact-buttons { display: flex; gap: 20px; justify-content: center; position: relative; z-index: 1; }
 
         /* FOOTER */
         .footer {
