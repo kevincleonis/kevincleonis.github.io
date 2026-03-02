@@ -676,9 +676,12 @@
             font-size: 15px; color: rgba(255,255,255,0.7);
             line-height: 1.8; font-style: italic;
         }
-        .quote-card[style*="background: var(--light)"] .quote-name { color: var(--dark) !important; }
-        .quote-card[style*="background: var(--light)"] .quote-text { color: #555 !important; }
-        .quote-card[style*="background: var(--light)"]::before { color: var(--accent) !important; opacity: 0.2 !important; }
+        .white-card .quote-card { background: var(--light) !important; border-color: #e0e0e0 !important; }
+        .white-card .quote-card:hover { background: #eee !important; }
+        .white-card .quote-name { color: var(--dark) !important; }
+        .white-card .quote-revenue { color: var(--accent) !important; }
+        .white-card .quote-text { color: #555 !important; }
+        .white-card .quote-card::before { color: var(--accent) !important; opacity: 0.2 !important; }
 
         .testimonials .media-wrapper {
             max-width: 800px; margin: 0 auto 56px;
@@ -1514,7 +1517,7 @@
         </div>
 
         <!-- CLIENT TESTIMONIALS SHOWCASE -->
-        <div style="max-width: 900px; margin: 0 auto 48px; background: #fff; border-radius: 24px; padding: 56px 48px; text-align: center; box-shadow: 0 8px 40px rgba(0,0,0,0.25); color: var(--dark);">
+        <div class="white-card" style="max-width: 900px; margin: 0 auto 48px; background: #fff; border-radius: 24px; padding: 56px 48px; text-align: center; box-shadow: 0 8px 40px rgba(0,0,0,0.25); color: var(--dark);">
             <p style="font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; font-weight: 600;">Client Testimonials</p>
             <h3 style="font-size: 42px; font-weight: 800; color: var(--dark); margin-bottom: 16px; line-height: 1.1;">300+ E-commerce Brands <span style="color: var(--accent);">Scaled</span></h3>
             <p style="font-size: 18px; color: #666; max-width: 650px; margin: 0 auto 40px; line-height: 1.7;">I've helped over 300 French e-commerce businesses find their winning marketing angle, scale profitably, and stabilise their growth — generating over <strong style="color: var(--dark);">€15 million in combined revenue</strong> for my clients.</p>
