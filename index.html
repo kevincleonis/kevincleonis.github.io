@@ -387,6 +387,17 @@
         --shadow:0 24px 60px -28px rgba(25,21,16,.45);
       }
       .mnlx *{box-sizing:border-box;}
+      .mnlx .strat{margin:40px 0 6px;}
+      .mnlx .strat-head{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;}
+      .mnlx .strat-head h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.01em;color:var(--ink);}
+      .mnlx .strat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+      .mnlx .s-card{background:var(--ivory-card);border:1px solid var(--line);border-radius:18px;padding:24px 24px 20px;}
+      .mnlx .s-card h3{font-family:"Fraunces",serif;font-weight:600;font-size:18.5px;color:var(--ink);margin-bottom:10px;}
+      .mnlx .s-card p{font-size:13.8px;line-height:1.58;color:var(--ink-soft);margin-bottom:7px;}
+      .mnlx .s-card p:last-child{margin-bottom:0;}
+      .mnlx .s-card .k{display:inline-block;min-width:52px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);}
+      .mnlx .s-card .res b{color:var(--ink);}
+      @media (max-width:900px){ .mnlx .strat-grid{grid-template-columns:1fr;} }
       .mnlx{
         background:var(--ivory);
         color:var(--ink);
@@ -731,6 +742,42 @@
               <div class="shot shot-b">
                 <a href="https://moonela.co.uk/products/custom-name-tennis-bracelet" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/moonela_pdp.png" alt="Moonela product page" /></a>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- strategy decisions -->
+        <div class="strat">
+          <div class="strat-head">
+            <span class="eyebrow">The thinking, not just the numbers</span>
+          </div>
+          <div class="strat-head" style="margin-top:-8px;">
+            <h2>The strategy behind the <em style="font-style:italic;color:var(--gold-deep);">numbers</em></h2>
+          </div>
+          <div class="strat-grid">
+            <div class="s-card">
+              <h3>Per-market pricing, not currency conversion</h3>
+              <p><span class="k">Why</span> The same piece doesn't command the same price in every market: willingness to pay and the competitor set change country by country.</p>
+              <p><span class="k">What</span> Analysed demand and local competitors per market (TrendTrack, SimilarWeb, Meta Ad Library) and set localised price points across 8 markets; repriced lines whenever the data shifted.</p>
+              <p class="res"><span class="k">Result</span> <b>Profitable growth across the UK + 7 international markets.</b></p>
+            </div>
+            <div class="s-card">
+              <h3>Offer architecture: Pick-4 &amp; BOGO</h3>
+              <p><span class="k">Why</span> Jewellery is bought rarely. The lever isn't purchase frequency, it's order value.</p>
+              <p><span class="k">What</span> Designed the offer around that: a Pick-4 bundle customers self-curate, plus a BOGO and seasonal-code calendar mapped to demand peaks.</p>
+              <p class="res"><span class="k">Result</span> <b>AOV up ~50% in 3 months (£46 &rarr; £70).</b></p>
+            </div>
+            <div class="s-card">
+              <h3>Find the angle before scaling spend</h3>
+              <p><span class="k">Why</span> In paid social the creative <i>is</i> the targeting. Scaling before you've found the angle burns budget.</p>
+              <p><span class="k">What</span> Continuous angle and hook testing: 13+ UGC creators briefed and managed, my own filmed and edited creative (plus AI tools), daily kill-or-scale decisions on CTR, CPA and ROAS.</p>
+              <p class="res"><span class="k">Result</span> <b>Winning angles identified first, then scaled profitably.</b></p>
+            </div>
+            <div class="s-card">
+              <h3>CRO before more traffic</h3>
+              <p><span class="k">Why</span> Fine jewellery converts lower than everyday products. Pushing more traffic into a leaky store just burns spend.</p>
+              <p><span class="k">What</span> Continuous A/B testing (Intelligems) and storefront optimisation on a custom Liquid build: PDPs, offers, speed.</p>
+              <p class="res"><span class="k">Result</span> <b>Conversion up 117%, supporting ~30% net margin.</b></p>
             </div>
           </div>
         </div>
