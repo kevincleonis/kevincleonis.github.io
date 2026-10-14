@@ -544,7 +544,7 @@
         padding:9px 15px;border-radius:100px;
       }
       .mnlx .chip b{color:var(--gold-deep);font-weight:600;}
-      .mnlx .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:6px;}
+      .mnlx .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:6px;}
       .mnlx .card{
         background:var(--ivory-card);border:1px solid var(--line);
         border-radius:16px;overflow:hidden;box-shadow:var(--shadow);
@@ -583,7 +583,7 @@
         .mnlx .gallery{grid-template-columns:repeat(2,1fr);}
         .mnlx .ledger .num{min-width:130px;}
       }
-      @media (max-width:560px){
+      @media (max-width:560px){ .mnlx .gallery.mobile-row{grid-template-columns:repeat(2,1fr)!important;}
         .mnlx{padding:26px 16px 44px;}
         .mnlx .gallery{grid-template-columns:1fr;}
         .mnlx .press span{font-size:19px;}
@@ -824,20 +824,73 @@
         </div>
         <div class="gallery">
           <div class="card">
-            <div class="frame"><a href="https://monrich.co.uk/" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich_home.png" alt="Monrich homepage" /></a></div>
+            <div class="frame"><a href="https://monrich.co.uk/pages/choose" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/choose.jpg" alt="Monrich gender gate" loading="lazy" /></a></div>
+            <div class="cap"><b>Gender gate</b><span>Personalisation</span></div>
+          </div>
+          <div class="card">
+            <div class="frame"><a href="https://monrich.co.uk/" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/home.jpg" alt="Monrich homepage" loading="lazy" /></a></div>
             <div class="cap"><b>Homepage</b><span>Brand</span></div>
           </div>
           <div class="card">
-            <div class="frame"><a href="https://monrich.co.uk/collections/all" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich_collection.png" alt="Monrich collection page" /></a></div>
-            <div class="cap"><b>Collection</b><span>Merchandising</span></div>
+            <div class="frame"><a href="https://monrich.co.uk/collections/gift-guide" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/coll_gift_guide.jpg" alt="Monrich gift guide" loading="lazy" /></a></div>
+            <div class="cap"><b>Gift guide</b><span>Gifting</span></div>
           </div>
           <div class="card">
-            <div class="frame"><a href="https://monrich.co.uk/products/custom-name-tennis-bracelet" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich_pdp.png" alt="Monrich product detail page" /></a></div>
-            <div class="cap"><b>Product</b><span>Conversion</span></div>
+            <div class="frame"><a href="https://monrich.co.uk/pages/men" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/men.jpg" alt="Monrich men" loading="lazy" /></a></div>
+            <div class="cap"><b>Men</b><span>Universe</span></div>
           </div>
           <div class="card">
-            <div class="frame"><a href="https://monrich.co.uk/collections/best-sellers" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich_bestsellers.png" alt="Monrich best sellers page" /></a></div>
+            <div class="frame"><a href="https://monrich.co.uk/collections/women-personalised-jewellery" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/coll_personalised.jpg" alt="Monrich personalised" loading="lazy" /></a></div>
+            <div class="cap"><b>Personalised</b><span>Collection</span></div>
+          </div>
+          <div class="card">
+            <div class="frame"><a href="https://monrich.co.uk/collections/men-gold-chains" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/coll_men_chains.jpg" alt="Monrich men&rsquo;s chains" loading="lazy" /></a></div>
+            <div class="cap"><b>Men&rsquo;s chains</b><span>Collection</span></div>
+          </div>
+          <div class="card">
+            <div class="frame"><a href="https://monrich.co.uk/collections/best-sellers" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/coll_bestsellers.jpg" alt="Monrich best sellers" loading="lazy" /></a></div>
             <div class="cap"><b>Best sellers</b><span>Trust</span></div>
+          </div>
+          <div class="card">
+            <div class="frame"><a href="https://monrich.co.uk/products/colour-theory-birthstone-name-necklace" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/pdp_name_necklace.jpg" alt="Monrich name necklace" loading="lazy" /></a></div>
+            <div class="cap"><b>Name necklace</b><span>Product</span></div>
+          </div>
+          <div class="card">
+            <div class="frame"><a href="https://monrich.co.uk/products/custom-name-tennis-bracelet" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/pdp_tennis.jpg" alt="Monrich name tennis bracelet" loading="lazy" /></a></div>
+            <div class="cap"><b>Name tennis bracelet</b><span>Product</span></div>
+          </div>
+          <div class="card">
+            <div class="frame"><a href="https://monrich.co.uk/products/cuban-gold-4mm" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/pdp_cuban.jpg" alt="Monrich cuban chain" loading="lazy" /></a></div>
+            <div class="cap"><b>Cuban chain</b><span>Product</span></div>
+          </div>
+        </div>
+
+        <div class="section-head" style="margin-top:34px">
+          <span class="idx">03</span>
+          <h2>Mobile first</h2>
+          <span class="rule"></span>
+        </div>
+        <p style="margin:-4px 0 14px;font-size:13.5px;line-height:1.55;color:#6a6258;max-width:640px;">Most of Monrich&rsquo;s traffic is on mobile, so every page was designed and tested on the phone first: gender gate, universe pages, collections and the personalised product page.</p>
+        <div class="gallery mobile-row" style="grid-template-columns:repeat(5,1fr)">
+          <div class="card">
+            <div class="frame" style="height:420px"><a href="https://monrich.co.uk/pages/choose" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/m_choose.jpg" alt="Monrich mobile gender gate" loading="lazy" /></a></div>
+            <div class="cap"><b>Gender gate</b><span>Mobile</span></div>
+          </div>
+          <div class="card">
+            <div class="frame" style="height:420px"><a href="https://monrich.co.uk/" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/m_home.jpg" alt="Monrich mobile homepage" loading="lazy" /></a></div>
+            <div class="cap"><b>Homepage</b><span>Mobile</span></div>
+          </div>
+          <div class="card">
+            <div class="frame" style="height:420px"><a href="https://monrich.co.uk/pages/women" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/m_women.jpg" alt="Monrich mobile women" loading="lazy" /></a></div>
+            <div class="cap"><b>Women</b><span>Mobile</span></div>
+          </div>
+          <div class="card">
+            <div class="frame" style="height:420px"><a href="https://monrich.co.uk/collections/women-personalised-jewellery" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/m_coll.jpg" alt="Monrich mobile collection" loading="lazy" /></a></div>
+            <div class="cap"><b>Collection</b><span>Mobile</span></div>
+          </div>
+          <div class="card">
+            <div class="frame" style="height:420px"><a href="https://monrich.co.uk/products/colour-theory-birthstone-name-necklace" target="_blank" rel="noopener" style="display:block;height:100%"><img src="assets/monrich/m_pdp.jpg" alt="Monrich mobile product" loading="lazy" /></a></div>
+            <div class="cap"><b>Product</b><span>Mobile</span></div>
           </div>
         </div>
 
